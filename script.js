@@ -11,6 +11,7 @@ quoteInputElement.addEventListener('input', () => {
 
     let correct = true
     arrayQuote.forEach((characterSpan, index) => {
+        
         const character = arrayValue[index]
         if(character == null){
             characterSpan.classList.remove('correct')
@@ -25,7 +26,9 @@ quoteInputElement.addEventListener('input', () => {
             correct = false
         }
     })
+
     if (correct) renderNewQuote()
+        
 })
 
 
@@ -49,7 +52,6 @@ async function renderNewQuote(){
 }
 
 let startTime
-
 function startTimer(){
     timerElement.innerText = 0
     startTime = new Date()
